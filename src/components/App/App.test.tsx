@@ -47,7 +47,7 @@ test("Renders products list", async () => {
 
   await waitForElementToBeRemoved(() => screen.queryByText(/Loading/));
   products.forEach((product) => {
-    expect(screen.getByText(product.title)).toBeInTheDocument();
+    expect(screen.getByText(product.title.toUpperCase())).toBeInTheDocument();
     expect(screen.getByText(formatAsPrice(product.price))).toBeInTheDocument();
   });
 });
